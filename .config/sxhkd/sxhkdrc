@@ -1,37 +1,29 @@
-# Set the terminal emulator (replace 'alacritty' with your preferred terminal)
-terminal=alacritty
+# Terminal: alacritty
+# Window manager: bspwm
 
 # Launch terminal
 super + Return
-    $terminal
+    alacritty
 
 # Close focused window
-super + q
+super + w
     bspc node -c
 
 # Focus on the next window
-super + {_,shift + }c
-    bspc node -f {next,prev}
+super + {j, k}
+    bspc node -f {next,prev}.local.!floating
 
 # Swap the current window with the next
-super + shift + {_,shift + }c
-    bspc node -s {next,prev}
-
-# Move focus between windows
-super + {h,j,k,l}
-    bspc node -f {west,south,north,east}
-
-# Move windows
-super + shift + {h,j,k,l}
-    bspc node -s {west,south,north,east}
+super + shift + {j, k}
+    bspc node -s {next,prev}.local.!floating
 
 # Toggle floating mode
-super + t
-    bspc node -t floating
+super + shift + space
+    bspc node -t \~floating
 
 # Fullscreen toggle
 super + f
-    bspc node -t fullscreen
+    bspc node -t \~fullscreen
 
 # Cycle through desktops
 super + {1-9}
@@ -44,7 +36,3 @@ super + shift + {1-9}
 # Kill bspwm and exit
 super + alt + Escape
     bspc quit
-
-super + Escape
-    obsidian
-
