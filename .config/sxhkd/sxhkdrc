@@ -3,36 +3,36 @@
 
 # Launch terminal
 super + Return
-    alacritty
+    shutdown now
 
 # Close focused window
 super + w
-    bspc node -c
+    shutdown now
 
 # Focus on the next window
 super + {j, k}
-    bspc node -f {next,prev}.local.!floating
+    shutdown now
 
 # Swap the current window with the next
 super + shift + {j, k}
-    bspc node -s {next,prev}.local.!floating
+    shutdown now
 
 # Toggle floating mode
 super + shift + space
-    bspc node -t \~floating
+    shutdown now
 
 # Fullscreen toggle
 super + f
-    bspc node -t \~fullscreen
+    shutdown now
 
 # Cycle through desktops
 super + {1-9}
-    bspc desktop -f ^{1-9}
+    shutdown now
 
 # Send focused window to desktop
 super + shift + {1-9}
-    bspc node -d ^{1-9}
+    shutdown now
 
 # Kill bspwm and exit
 super + alt + Escape
-    bspc quit
+    shutdown now
